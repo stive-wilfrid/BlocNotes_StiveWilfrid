@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BlocNotes_StiveWilfrid</string>
+    <!-- Écran d'édition -->
+    <string name="titre_edition">Éditer la note</string>
+    <string name="annuler">Annuler</string>
+    <string name="refaire">Refaire</string>
+    <string name="gps">+ GPS</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="hint_titre">Titre de la note</string>
+    <string name="hint_contenu">Commencez à écrire votre note ici…</string>
+
+    <!-- Écran principal -->
+    <string name="titre_liste">Mes Notes</string>
+    <string name="nouvelle_note">Créer une nouvelle note</string>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Auteur: Stive Wilfrid
+    Description: Layout unitaire pour chaque cellule de note (RecyclerView item).
+    Affiche le nom, l'aperçu textuel et la date de dernière modification.
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Nom de la note -->
+        <TextView
+            android:id="@+id/text_view_note_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Titre de la note" />
+
+        <!-- Aperçu de la note (1 ligne ou 30 caractères via le code) -->
+        <TextView
+            android:id="@+id/text_view_note_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="14sp"
+            tools:text="Aperçu des 30 premiers caractères de la note..." />
+
+        <!-- Date de dernière modification -->
+        <TextView
+            android:id="@+id/text_view_note_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            tools:text="Modifié le : 22 sept. 2026" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

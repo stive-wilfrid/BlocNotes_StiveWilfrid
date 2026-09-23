@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Auteur: Stive Wilfrid
+    Description: Écran de création et modification d'une note.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditNoteActivity">
+
+    <!-- Barre d'outils supérieure -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_edit"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/titre_edition"
+        app:titleTextColor="?attr/colorOnPrimary" />
+
+    <!-- Barre de boutons (Annuler, Refaire, GPS, Enregistrer) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_undo"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:text="@string/annuler" />
+
+        <Button
+            android:id="@+id/btn_redo"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:text="@string/refaire" />
+
+        <Button
+            android:id="@+id/btn_gps"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:text="@string/gps" />
+
+        <Button
+            android:id="@+id/btn_save"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:text="@string/enregistrer" />
+    </LinearLayout>
+
+    <!-- Zone d'édition adaptative -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Champ Titre de la note -->
+            <EditText
+                android:id="@+id/edit_text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/hint_titre"
+                android:importantForAutofill="no"
+                android:inputType="textCapSentences"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Champ de contenu de la note -->
+            <EditText
+                android:id="@+id/edit_text_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="top|start"
+                android:hint="@string/hint_contenu"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapSentences"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
