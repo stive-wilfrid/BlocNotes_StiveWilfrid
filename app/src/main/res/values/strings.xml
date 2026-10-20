@@ -8,6 +8,7 @@
     <string name="enregistrer">Enregistrer</string>
     <string name="hint_titre">Titre de la note</string>
     <string name="hint_contenu">Commencez à écrire votre note ici…</string>
+    <string name="titre_liste_etudiants"> liste_etudiants</string>
 
     <!-- Écran principal -->
     <string name="titre_liste">Mes Notes</string>

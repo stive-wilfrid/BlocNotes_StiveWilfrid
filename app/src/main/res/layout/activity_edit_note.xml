@@ -75,6 +75,7 @@
             android:textAllCaps="false"
             android:textSize="12sp"
             android:text="@string/enregistrer" />
+
     </LinearLayout>
 
     <!-- Zone d'édition adaptative -->

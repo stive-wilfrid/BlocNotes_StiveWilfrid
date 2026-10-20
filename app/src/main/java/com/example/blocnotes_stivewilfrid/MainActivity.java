@@ -2,12 +2,15 @@ package com.example.blocnotes_stivewilfrid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Activité principale : affiche la liste des notes
@@ -34,5 +37,18 @@ public class MainActivity extends AppCompatActivity {
         // Ouvre l'écran d'édition pour créer une nouvelle note
         findViewById(R.id.fab_add_note).setOnClickListener(v ->
                 startActivity(new Intent(this, EditNoteActivity.class)));
+
+        gestionnaire = new GestionnaireNotes(this);
+        textAucuneNote = findViewById(R.id.text_aucune_note);
+
+        //Toucher une note et l'ouvrer dans la page d'édition
+        adaptateur = new NoteAdapter(note -> ouvrirEdition(note.getId()));
+        RecyclerView liste = findViewById(R.id.recycler_view_notes);
+        liste.setAdapter(adaptateur);
+
+        // Le bouton + ouvre la page d'édition pour une nouvelle note
+        findViewById(R.id.fab_add_note).setOnClickListener(v ->
+                ouvrirEdition(EditionNoteActivity.AUCUNE_NOTE));
     }
+
 }
