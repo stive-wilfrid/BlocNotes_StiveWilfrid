@@ -17,7 +17,7 @@ import java.util.List;
  * Activité principale : affiche la liste des notes, de la plus récemment modifiée
  * à la plus ancienne, et permet d'en créer une nouvelle.
  *
- * @auteur STIVE
+ * @author Stive Wilfrid
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -45,10 +45,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        // Ouvre l'écran d'édition pour créer une nouvelle note
-        findViewById(R.id.fab_add_note).setOnClickListener(v ->
-                startActivity(new Intent(this, EditNoteActivity.class)));
-
         gestionnaire = new GestionnaireNotes(this);
         textAucuneNote = findViewById(R.id.text_aucune_note);
 
