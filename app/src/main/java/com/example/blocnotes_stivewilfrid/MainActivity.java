@@ -11,9 +11,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.List;
 
 /**
- * Activité principale : affiche la liste des notes
+ * Activité principale : affiche la liste des notes, de la plus récemment modifiée
+ * à la plus ancienne, et permet d'en créer une nouvelle.
  *
  * @auteur STIVE
  */
@@ -23,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
      * Initialise l'écran principal et ses composts
      * @param savedInstanceState
      */
+
+    /** Gère la lecture des notes sauvegardées.*/
+    private GestionnaireNotes gestionnaire;
+
+    /** Adaptateur de la liste des notes.*/
+    private NoteAdapter adaptateur;
+
+    /** Message affiché lorsqu'il n'y a aucune note.*/
+    private TextView textAucuneNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +59,32 @@ public class MainActivity extends AppCompatActivity {
 
         // Le bouton + ouvre la page d'édition pour une nouvelle note
         findViewById(R.id.fab_add_note).setOnClickListener(v ->
-                ouvrirEdition(EditionNoteActivity.AUCUNE_NOTE));
+                ouvrirEdition(EditNoteActivity.AUCUNE_NOTE));
+    }
+
+    /**
+     * Recharge la liste à liste chaque retour sur l'écran principal, pour
+     * afficher les notes créées ou modifiéés.
+     */
+     @Override
+    protected void onResume() {
+         super.onResume();
+         List<Note> notes = gestionnaire.chargerNotes();
+         adaptateur.mettreAJour(notes);
+         textAucuneNote.setVisibility(notes.isEmpty()?View.VISIBLE : View.GONE);
+     }
+
+    /**
+     * Ouvrez la page d'édition.
+     *
+     * @param idNote identifiant de la note à ouvrir, ou
+     *               {@link EditNoteActivity#AUCUNE_NOTE} pour une nouvelle note
+     */
+
+    private void ouvrirEdition(long idNote) {
+        Intent intention = new Intent(this, EditNoteActivity.class);
+        intention.putExtra(EditNoteActivity.EXTRA_ID_NOTE, idNote);
+        startActivity(intention);
     }
 
 }

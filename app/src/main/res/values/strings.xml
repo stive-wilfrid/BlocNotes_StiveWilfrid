@@ -13,4 +13,27 @@
     <!-- Écran principal -->
     <string name="titre_liste">Mes Notes</string>
     <string name="nouvelle_note">Créer une nouvelle note</string>
+
+    <!-- Liste des notes -->
+    <string name="aucune_note">Aucune note pour le moment.\nAppuyez sur + pour en créer une.</string>
+    <string name="date_modification">Modifiée le %1$s</string>
+
+    <!-- Édition, enregistrement et partage -->
+    <string name="nouvelle_note_titre">Nouvelle note</string>
+    <string name="retour">Retour</string>
+    <string name="partager">Partager</string>
+    <string name="sans_titre">Sans titre</string>
+    <string name="note_enregistree">Note enregistrée</string>
+    <string name="erreur_enregistrement">Erreur : la note n\'a pas pu être enregistrée</string>
+
+    <!-- Importation -->
+    <string name="titre_note_importee">Note importée</string>
+    <string name="texte_importe">Texte importé dans une nouvelle note</string>
+    <string name="importer_dans_note">Créer une note</string>
+
+    <!-- Position GPS -->
+    <string name="recherche_position">Recherche de la position…</string>
+    <string name="position_introuvable">Position introuvable. Réessayez à l\'extérieur.</string>
+    <string name="localisation_desactivee">Activez la localisation du téléphone</string>
+    <string name="permission_refusee">Permission de localisation refusée</string>
 </resources>
